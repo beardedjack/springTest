@@ -8,8 +8,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+import ru.evgen.springTest.model.User;
 
 /**
  * Handles requests for the application home page.
@@ -35,5 +38,13 @@ public class HomeController {
 		
 		return "home";
 	}
+	
+	@RequestMapping(value = "/check-user")
+    public ModelAndView checkUser(@ModelAttribute("userJSP") User user) {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("secondPage");
+        modelAndView.addObject("userJSP", user);
+        return modelAndView; 
+    }
 	
 }
