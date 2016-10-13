@@ -5,9 +5,9 @@
 </head>
 <body>
 <h1>
-	Hello world!  
+	Хелло!  
 </h1>
 
-<P>  ффывпавп!!! ${serverTime}. </P>
+<P>  Время на сервере ${serverTime}. </P>
 </body>
 </html>
