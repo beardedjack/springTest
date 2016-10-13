@@ -1,4 +1,4 @@
-package ru.evgen.springTest;
+package ru.evgen.springTest.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
