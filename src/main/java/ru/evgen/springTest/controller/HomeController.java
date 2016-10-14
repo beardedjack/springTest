@@ -25,19 +25,31 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
+	
+	/*
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
-		
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
 		String formattedDate = dateFormat.format(date);
-		
 		model.addAttribute("serverTime", formattedDate );
-		
 		return "home";
 	}
+	*/
+	
+	 @RequestMapping(value = "/", method = RequestMethod.GET)
+	    public ModelAndView main(Locale locale) {
+		 	logger.info("Welcome home! The client locale is {}.", locale);
+			Date date = new Date();
+			DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+			String formattedDate = dateFormat.format(date);
+		 	ModelAndView modelAndView = new ModelAndView();
+	        modelAndView.addObject("userJSP", new User());
+	        modelAndView.addObject("serverTime", formattedDate);
+	        modelAndView.setViewName("home");
+	        return modelAndView;
+	    }
 	
 	@RequestMapping(value = "/check-user")
     public ModelAndView checkUser(@ModelAttribute("userJSP") User user) {

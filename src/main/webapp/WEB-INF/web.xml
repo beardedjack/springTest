@@ -29,6 +29,13 @@
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	
+	<servlet-mapping>
+        <servlet-name>appServlet</servlet-name>
+        <url-pattern>*.form</url-pattern>
+    </servlet-mapping>
+ 
+    
 
 <filter>
         <filter-name>encodingFilter</filter-name>
